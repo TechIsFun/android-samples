@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <!--
+    Share the directory files/images/ directory of app's internal storage.
+    The "name" attribute tells the FileProvider to add the path segment "myimages" to content URIs for files in the files/images/ subdirectory
+    -->
+    <files-path path="documents/" name="documents" />
+
+    <!-- You can add other paths here -->
+    <!-- You can use the <external-path> element to share directories in external storage -->
+    <!-- You can use the <cache-path> element to share directories in your internal cache directory -->
+</paths>

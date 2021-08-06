@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">FireSharingProducer</string>
+    <string name="send_file_to_consumer">Send file to consumer</string>
+    <string name="file_consumed">File consumed!</string>
+</resources>
