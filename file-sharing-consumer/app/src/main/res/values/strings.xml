@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">FileSharingConsumer</string>
+    <string name="no_file_received">No file received</string>
+</resources>
