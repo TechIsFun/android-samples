@@ -14,13 +14,16 @@ on:
 
 
 jobs:
-  setup:
+  build:
     # Skip build if head commit contains 'skip ci'
     if: "!contains(github.event.head_commit.message, 'skip ci')"
 
     runs-on: ubuntu-latest
     timeout-minutes: 120
-    
+    strategy:
+      matrix:
+        project: ["file-sharing-producer", "file-sharing-consumer"]
+
     steps:
       - uses: actions/checkout@v2
         #with:
@@ -35,36 +38,14 @@ jobs:
         with:
           java-version: 11
 
+      - name: Build
+        run: |
+          cd ${{ matrix.project }}
+          ./gradlew --scan --stacktrace \
+              assemble \
+              lintDebug
 
-  build-file-sharing-producer:
-    needs: setup
-
-    steps:
-      - name: Build file-sharing-producer
-      run: |
-        cd file-sharing-producer
-        ./gradlew --scan --stacktrace \
-            assemble \
-            lintDebug
-
-
-  build-file-sharing-consumer:
-    needs: setup
-
-    steps:
-      - name: Build file-sharing-consumer
-      run: |
-        cd file-sharing-consumer
-        ./gradlew --scan --stacktrace \
-            assemble \
-            lintDebug
-
-
-  upload-artifacts:
-    needs: setup
-    
-    steps:
-       - name: Upload test results
+      - name: Upload test results
         if: always()
         uses: actions/upload-artifact@v2
         with:
