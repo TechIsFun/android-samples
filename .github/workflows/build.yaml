@@ -35,8 +35,9 @@ jobs:
         with:
           java-version: 11
 
-      - name: Build
+      - name: Build file-sharing-producer
         run: |
+          cd file-sharing-producer
           ./gradlew --scan --stacktrace \
               assemble \
               lintDebug
