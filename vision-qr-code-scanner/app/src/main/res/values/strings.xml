@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">VisionQrCodeScanner</string>
+    <string name="scan_barcode_or_qr_code">Scan Barcode or QR Code</string>
+    <string name="low_storage_error">Not enough disk space</string>
+    <string name="ok">OK</string>
+    <string name="no_camera_permission">You must grant access to camera in order to scan</string>
+</resources>
