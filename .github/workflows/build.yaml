@@ -6,6 +6,7 @@ on:
     branches:
       - main
       - github-actions
+      - renovate/**
     paths-ignore:
       - '**.md'
   pull_request:
