@@ -9,10 +9,11 @@ on:
       - 'renovate/**'
     paths-ignore:
       - '**.md'
+      - '**.json'
   pull_request:
     paths-ignore:
       - '**.md'
-
+      - '**.json'
 
 jobs:
   build:
