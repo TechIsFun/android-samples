@@ -23,7 +23,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        project: ["file-sharing-producer", "file-sharing-consumer"]
+        project: ["file-sharing-producer", "file-sharing-consumer", "vision-qr-code-scanner"]
 
     steps:
       - uses: actions/checkout@v2
