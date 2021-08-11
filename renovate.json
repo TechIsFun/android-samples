@@ -14,8 +14,7 @@
         "digest"
       ],
       "matchCurrentVersion": "!/^0/",
-      "automerge": true,
-      "automergeType": "branch"
+      "automerge": true
     }
   ],
   "assignees": [
