@@ -1,4 +1,4 @@
-package com.github.techisfun.android.workmanager
+package com.github.techisfun.android.workmanager.workers
 
 import android.content.Context
 import androidx.hilt.work.HiltWorker
@@ -10,7 +10,7 @@ import java.util.*
 import java.util.concurrent.TimeUnit
 
 /**
- * A simple periodic worker that is executed every 2 minutes
+ * A simple periodic worker that is executed every 15 minutes
  *
  * @author Andrea Maglie
  */

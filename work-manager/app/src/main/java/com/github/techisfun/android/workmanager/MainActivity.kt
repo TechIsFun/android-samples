@@ -5,19 +5,10 @@ import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import androidx.work.Data
-import androidx.work.impl.model.WorkTypeConverters.StateIds.ENQUEUED
-
-import androidx.work.impl.model.WorkTypeConverters.StateIds.RUNNING
-
-import androidx.work.impl.model.WorkTypeConverters.StateIds.SUCCEEDED
-
-import androidx.work.impl.model.WorkTypeConverters.StateIds.CANCELLED
-
-import androidx.work.WorkInfo
 
 import androidx.work.WorkManager
+import com.github.techisfun.android.workmanager.workers.PeriodicWorker
 import timber.log.Timber
-import java.time.LocalDateTime
 import java.util.*
 
 

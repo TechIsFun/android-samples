@@ -14,6 +14,7 @@ Both apps are compatibile with Android 11 file sharing permission system.
 - periodic worker
 - periodic worker that runs at fixed hours
 - chained workers
+- a worker with extra dependencies injected by Hilt
 
 ## Dependency update
 This repository uses [Renovate](https://github.com/renovatebot/renovate) to automatically update dependencies.

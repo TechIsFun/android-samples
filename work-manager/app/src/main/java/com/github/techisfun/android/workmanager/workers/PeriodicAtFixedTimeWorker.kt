@@ -1,8 +1,9 @@
-package com.github.techisfun.android.workmanager
+package com.github.techisfun.android.workmanager.workers
 
 import android.content.Context
 import androidx.hilt.work.HiltWorker
 import androidx.work.*
+import com.github.techisfun.android.workmanager.BuildConfig
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedInject
 import timber.log.Timber

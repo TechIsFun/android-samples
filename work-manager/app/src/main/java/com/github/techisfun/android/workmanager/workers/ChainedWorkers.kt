@@ -1,4 +1,4 @@
-package com.github.techisfun.android.workmanager.chain
+package com.github.techisfun.android.workmanager.workers
 
 import android.content.Context
 import androidx.hilt.work.HiltWorker
@@ -7,7 +7,6 @@ import com.github.techisfun.android.workmanager.thenMaybe
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedInject
 import timber.log.Timber
-import java.util.*
 
 /**
  * An example of how to chain multiple workers

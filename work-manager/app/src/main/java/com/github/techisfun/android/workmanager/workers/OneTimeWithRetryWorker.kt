@@ -1,4 +1,4 @@
-package com.github.techisfun.android.workmanager
+package com.github.techisfun.android.workmanager.workers
 
 import android.content.Context
 import androidx.hilt.work.HiltWorker
@@ -9,7 +9,7 @@ import timber.log.Timber
 import java.util.*
 
 /**
- * A simple periodic worker that is executed every 2 minutes
+ * A simple worker that is executed just one time
  *
  * @author Andrea Maglie
  */
