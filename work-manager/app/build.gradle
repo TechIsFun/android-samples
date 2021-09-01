@@ -36,7 +36,7 @@ android {
 dependencies {
 
     // Work Manager
-    def work_version = "2.6.0-rc01"
+    def work_version = "2.6.0"
     implementation "androidx.work:work-runtime-ktx:$work_version"
     androidTestImplementation "androidx.work:work-testing:$work_version"
     implementation 'androidx.hilt:hilt-work:1.0.0'
