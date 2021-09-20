@@ -5,7 +5,7 @@
 The two apps [file-sharing-producer](https://github.com/TechIsFun/android-samples/tree/main/file-sharing-producer) and [file-sharing-consumer](https://github.com/TechIsFun/android-samples/tree/main/file-sharing-consumer) shows how a _producer_ app can share a file with a _consumer_ app that will update file's content.
 Both apps are compatibile with Android 11 file sharing permission system.
 
-## Bracode and QR code scanning
+## Barcode and QR code scanning
 [vision-qr-code-scanner](https://github.com/TechIsFun/android-samples/tree/main/vision-qr-code-scanner) is and app that implements an activity that can read barcodes and QR codes. It's based on [play-services-vision](https://mvnrepository.com/artifact/com.google.android.gms/play-services-vision?repo=google) and it's highly inspired from [this project from googlesamples](https://github.com/googlesamples/android-vision); all dependencies are up-to-date to the latest `androidx` and `play-services-vision` versions.
 
 ## Work Manager
