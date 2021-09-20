@@ -6,10 +6,10 @@ The two apps [file-sharing-producer](https://github.com/TechIsFun/android-sample
 Both apps are compatibile with Android 11 file sharing permission system.
 
 ## Barcode and QR code scanning
-[vision-qr-code-scanner](https://github.com/TechIsFun/android-samples/tree/main/vision-qr-code-scanner) is and app that implements an activity that can read barcodes and QR codes. It's based on [play-services-vision](https://mvnrepository.com/artifact/com.google.android.gms/play-services-vision?repo=google) and it's highly inspired from [this project from googlesamples](https://github.com/googlesamples/android-vision); all dependencies are up-to-date to the latest `androidx` and `play-services-vision` versions.
+[vision-qr-code-scanner](https://github.com/TechIsFun/android-samples/tree/main/vision-qr-code-scanner) implements an activity that can read barcodes and QR codes. It's based on [play-services-vision](https://mvnrepository.com/artifact/com.google.android.gms/play-services-vision?repo=google) and it's highly inspired from [this project from googlesamples](https://github.com/googlesamples/android-vision); all dependencies are up-to-date to the latest `androidx` and `play-services-vision` versions.
 
 ## Work Manager
-[work-manager]](https://github.com/TechIsFun/android-samples/tree/main/work-manager) contains some examples of Work Manager implementations:
+[work-manager](https://github.com/TechIsFun/android-samples/tree/main/work-manager) contains some examples of Work Manager implementations:
 - one time worker
 - periodic worker
 - periodic worker that runs at fixed hours
