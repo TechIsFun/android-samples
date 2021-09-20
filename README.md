@@ -1,5 +1,6 @@
 # Android Samples
 
+![ci](https://github.com/TechIsFun/android-samples/actions/workflows/build.yaml/badge.svg)
 
 ## File Sharing
 The two apps [file-sharing-producer](https://github.com/TechIsFun/android-samples/tree/main/file-sharing-producer) and [file-sharing-consumer](https://github.com/TechIsFun/android-samples/tree/main/file-sharing-consumer) shows how a _producer_ app can share a file with a _consumer_ app that will update file's content.
