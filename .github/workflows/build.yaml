@@ -4,9 +4,7 @@ name: Build & test
 on:
   push:
     branches:
-      - main
-      - github-actions
-      - 'renovate/**'
+      - '*'
     paths-ignore:
       - '**.md'
       - '**.json'
