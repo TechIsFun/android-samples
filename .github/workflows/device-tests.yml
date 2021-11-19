@@ -20,8 +20,9 @@ jobs:
       # Allow tests to continue on other devices if they fail on one device.
       fail-fast: false
       matrix:
-        api-level: [ 26, 28, 29, 31 ]
+        api-level: [ 31 ]
         shard: [ 0, 1, 2 ] # Need to update shard-count below if this changes
+        project: [ "work-manager" ]
 
     steps:
       - uses: actions/checkout@v2
@@ -63,13 +64,16 @@ jobs:
 
       - name: Run device tests
         uses: reactivecircus/android-emulator-runner@v2
+        env:
+          PROJECT_DIR: ${{ matrix.project }}
         with:
           api-level: ${{ matrix.api-level }}
           target: ${{ steps.determine-target.outputs.TARGET }}
           profile: Galaxy Nexus
           emulator-build: 7425822 # https://github.com/ReactiveCircus/android-emulator-runner/issues/160
           # We run all tests, sharding them over 3 shards
-          script: ./scripts/run-tests.sh --log-file=logcat.txt --shard-index=${{ matrix.shard }} --shard-count=3
+          script: $GITHUB_WORKSPACE/scripts/run-tests.sh --log-file=logcat.txt --shard-index=${{ matrix.shard }} --shard-count=3
+          working-directory: $PROJECT_DIR
 
       #- name: Clean secrets
       #  if: always()
