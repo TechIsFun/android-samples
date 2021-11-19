@@ -83,15 +83,19 @@ jobs:
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v2
+        env:
+          PROJECT_DIR: ${{ matrix.project }}
         with:
           name: logs-${{ matrix.api-level }}-${{ steps.determine-target.outputs.TARGET }}-${{ matrix.shard }}
-          path: logcat.txt
+          path: $PROJECT_DIR/logcat.txt
 
       - name: Upload test results
         if: always()
         uses: actions/upload-artifact@v2
+        env:
+          PROJECT_DIR: ${{ matrix.project }}
         with:
-          name: test-results-${{ matrix.api-level }}-${{ steps.determine-target.outputs.TARGET }}-${{ matrix.shard }}
+          name: ${{ matrix.project }}-test-results-${{ matrix.api-level }}-${{ steps.determine-target.outputs.TARGET }}-${{ matrix.shard }}
           path: |
-            **/build/reports/*
-            **/build/outputs/*/connected/*
+            $PROJECT_DIR/**/build/reports/*
+            $PROJECT_DIR/**/build/outputs/*/connected/*
