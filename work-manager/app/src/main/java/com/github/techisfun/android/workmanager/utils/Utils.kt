@@ -1,4 +1,4 @@
-package com.github.techisfun.android.workmanager
+package com.github.techisfun.android.workmanager.utils
 
 import android.annotation.SuppressLint
 import androidx.work.Data
