@@ -38,7 +38,7 @@ jobs:
       #  run: release/signing-setup.sh ${{ secrets.ENCRYPT_KEY }}
 
       - name: Generate cache key
-        run: ./script/checksum.sh checksum.txt
+        run: ./scripts/checksum.sh checksum.txt
 
       - uses: actions/cache@v2
         with:
