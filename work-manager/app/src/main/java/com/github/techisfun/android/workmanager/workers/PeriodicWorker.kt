@@ -5,7 +5,9 @@ import androidx.hilt.work.HiltWorker
 import androidx.work.*
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedInject
+import kotlinx.coroutines.delay
 import timber.log.Timber
+import java.time.Duration
 import java.util.*
 import java.util.concurrent.TimeUnit
 
@@ -20,6 +22,7 @@ class PeriodicWorker @AssistedInject constructor(@Assisted appContext: Context, 
 
     companion object {
         private const val WORK_UNIQUE_NAME = "periodic-worker"
+        const val WORK_PROGRESS_KEY = "progress"
 
         fun start(appContext: Context): UUID {
             val constraints = Constraints.Builder()
@@ -56,7 +59,12 @@ class PeriodicWorker @AssistedInject constructor(@Assisted appContext: Context, 
 
             Timber.d("Execute work here")
 
-            Result.success()
+            for (i in 0 until 100) {
+                setProgress(workDataOf(WORK_PROGRESS_KEY to i))
+                delay(250)
+            }
+
+            Result.success(workDataOf(WORK_PROGRESS_KEY to 100))
         } catch (e: Exception) {
             Timber.w(e)
             Result.retry()

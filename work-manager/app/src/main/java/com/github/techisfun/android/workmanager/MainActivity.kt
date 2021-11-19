@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import androidx.work.Data
+import androidx.work.WorkInfo
 
 import androidx.work.WorkManager
 import com.github.techisfun.android.workmanager.workers.PeriodicWorker
@@ -36,9 +37,18 @@ class MainActivity : AppCompatActivity() {
         WorkManager.getInstance(applicationContext)
             .getWorkInfoByIdLiveData(uuid)
             .observe(this) { workInfo ->
-                val progress: Data = workInfo.progress
-                Timber.d(progress.toString())
-                workerStateTextView.text = getString(R.string.worker_state, workInfo.state.toString(), progress.toString(), Date().toString())
+                onWorkInfoUpdateReceived(workInfo)
             }
+    }
+
+    private fun onWorkInfoUpdateReceived(workInfo: WorkInfo?) {
+        val progressPercent: Int = workInfo?.progress?.getInt(PeriodicWorker.WORK_PROGRESS_KEY, 0) ?: 0
+        val state: String = workInfo?.state.toString()
+        workerStateTextView.text = getString(
+            R.string.worker_state,
+            state,
+            progressPercent.toString(),
+            Date().toString()
+        )
     }
 }
