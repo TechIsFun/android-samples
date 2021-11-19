@@ -29,6 +29,8 @@ class OneTimeWithRetryWorker @AssistedInject constructor(@Assisted appContext: C
 
             val workRequest = OneTimeWorkRequestBuilder<OneTimeWithRetryWorker>()
                 .setConstraints(constraints)
+                // since Android 12 and WorkManager 2.7.0
+                .setExpedited(OutOfQuotaPolicy.RUN_AS_NON_EXPEDITED_WORK_REQUEST) // or: DROP_WORK_REQUEST
                 .build()
 
             val workManager = WorkManager.getInstance(appContext)
