@@ -69,6 +69,7 @@ jobs:
         with:
           api-level: ${{ matrix.api-level }}
           target: ${{ steps.determine-target.outputs.TARGET }}
+          arch: x86_64
           profile: Galaxy Nexus
           emulator-build: 7425822 # https://github.com/ReactiveCircus/android-emulator-runner/issues/160
           # We run all tests, sharding them over 3 shards
