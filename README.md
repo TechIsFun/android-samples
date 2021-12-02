@@ -9,6 +9,9 @@ Both apps are compatibile with Android 11 file sharing permission system.
 ## Barcode and QR code scanning
 [vision-qr-code-scanner](https://github.com/TechIsFun/android-samples/tree/main/vision-qr-code-scanner) implements an activity that can read barcodes and QR codes. It's based on [play-services-vision](https://mvnrepository.com/artifact/com.google.android.gms/play-services-vision?repo=google) and it's highly inspired from [this project from googlesamples](https://github.com/googlesamples/android-vision); all dependencies are up-to-date to the latest `androidx` and `play-services-vision` versions.
 
+## Lottie
+[lottie](https://github.com/TechIsFun/android-samples/tree/main/lottie) app shows how to use Lottie animations.
+
 ## Work Manager
 [work-manager](https://github.com/TechIsFun/android-samples/tree/main/work-manager) contains some examples of Work Manager implementations:
 - one time worker

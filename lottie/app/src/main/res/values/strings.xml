@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">LottieSample</string>
+    <string name="main_message">This is a Lottie animation</string>
+</resources>
