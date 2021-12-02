@@ -22,7 +22,7 @@ jobs:
       matrix:
         api-level: [ 28, 29, 31 ]
         shard: [ 0, 1 ] # Need to update shard-count below if this changes
-        project: [ "work-manager" ]
+        project: [ "work-manager", "lottie" ]
 
     steps:
       - uses: actions/checkout@v2
