@@ -44,10 +44,14 @@ class LottieFragment : Fragment() {
         @JvmStatic
         fun newInstance(lottieAnimationId: Int, message: String) =
             LottieFragment().apply {
-                arguments = Bundle().apply {
-                    putInt(ARG_LOTTIE_ANIMATION_ID, lottieAnimationId)
-                    putString(ARG_MESSAGE, message)
-                }
+                arguments = buildArgumentsBundle(lottieAnimationId, message)
             }
+
+        fun buildArgumentsBundle(lottieAnimationId: Int, message: String): Bundle {
+            return Bundle().apply {
+                putInt(ARG_LOTTIE_ANIMATION_ID, lottieAnimationId)
+                putString(ARG_MESSAGE, message)
+            }
+        }
     }
 }
