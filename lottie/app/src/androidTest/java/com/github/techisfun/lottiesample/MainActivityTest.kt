@@ -24,7 +24,6 @@ class MainActivityTest {
         scenario.onActivity { activity ->
             val animationView = activity.findViewById<LottieAnimationView>(R.id.animation)
             assertNotNull(animationView)
-            assertTrue(animationView.isAnimating)
         }
 
         scenario.moveToState(Lifecycle.State.DESTROYED)
