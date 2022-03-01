@@ -26,7 +26,7 @@ jobs:
         project: ["file-sharing-producer", "file-sharing-consumer", "vision-qr-code-scanner", "work-manager"]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         #with:
           # Fetch expanded history, which is needed for affected module detection
           #fetch-depth: '500'
