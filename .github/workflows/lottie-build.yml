@@ -1,0 +1,57 @@
+name: lottie build
+
+on:
+  push:
+    branches:
+      - '*'
+    paths:
+      - 'lottie/**'
+    paths-ignore:
+      - '**.md'
+      - '**.json'
+  pull_request:
+    paths:
+      - 'lottie/**'  
+    paths-ignore:
+      - '**.md'
+      - '**.json'
+
+jobs:
+  build:
+    # Skip build if head commit contains 'skip ci'
+    if: "!contains(github.event.head_commit.message, 'skip ci')"
+
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Copy CI gradle.properties
+        run: mkdir -p ~/.gradle ; cp .github/ci-gradle.properties ~/.gradle/gradle.properties
+
+      - name: set up JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: 17
+          distribution: 'zulu'
+
+      - name: Build
+        env:
+          PROJECT_DIR: lottie
+        run: |
+          cd lottie
+          ./gradlew --scan --stacktrace \
+              assemble \
+              lintDebug
+        
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-results
+          path: |
+            lottie/**/build/test-results/*
+            lottie/**/build/reports/*
