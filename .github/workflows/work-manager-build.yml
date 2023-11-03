@@ -6,15 +6,13 @@ on:
       - '*'
     paths:
       - 'work-manager/**'
-    paths-ignore:
-      - '**.md'
-      - '**.json'
+      - '!**.md'
+      - '!**.json'
   pull_request:
     paths:
       - 'work-manager/**'  
-    paths-ignore:
-      - '**.md'
-      - '**.json'
+      - '!**.md'
+      - '!**.json'
 
 jobs:
   build:

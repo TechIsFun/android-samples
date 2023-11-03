@@ -6,15 +6,13 @@ on:
       - '*'
     paths:
       - 'lottie/**'
-    paths-ignore:
-      - '**.md'
-      - '**.json'
+      - '!**.md'
+      - '!**.json'
   pull_request:
     paths:
       - 'lottie/**'  
-    paths-ignore:
-      - '**.md'
-      - '**.json'
+      - '!**.md'
+      - '!**.json'
 
 jobs:
   build:
