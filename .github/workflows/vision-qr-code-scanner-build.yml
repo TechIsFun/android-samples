@@ -1,14 +1,17 @@
-# Reference: https://github.com/google/accompanist/blob/main/.github/workflows/build.yml
-name: Build & test
+name: vision-qr-code-scanner build
 
 on:
   push:
     branches:
       - '*'
+    paths:
+      - 'vision-qr-code-scanner/**'
     paths-ignore:
       - '**.md'
       - '**.json'
   pull_request:
+    paths:
+      - 'vision-qr-code-scanner/**'  
     paths-ignore:
       - '**.md'
       - '**.json'
@@ -22,15 +25,10 @@ jobs:
     timeout-minutes: 120
     strategy:
       fail-fast: false
-      matrix:
-        project: ["file-sharing-producer", "file-sharing-consumer"]
-
+      
     steps:
       - uses: actions/checkout@v3
-        #with:
-          # Fetch expanded history, which is needed for affected module detection
-          #fetch-depth: '500'
-
+      
       - name: Copy CI gradle.properties
         run: mkdir -p ~/.gradle ; cp .github/ci-gradle.properties ~/.gradle/gradle.properties
 
@@ -42,9 +40,9 @@ jobs:
 
       - name: Build
         env:
-          PROJECT_DIR: ${{ matrix.project }}
+          PROJECT_DIR: vision-qr-code-scanner
         run: |
-          cd $PROJECT_DIR
+          cd vision-qr-code-scanner
           ./gradlew --scan --stacktrace \
               assemble \
               lintDebug
@@ -55,5 +53,5 @@ jobs:
         with:
           name: test-results
           path: |
-            **/build/test-results/*
-            **/build/reports/*
+            vision-qr-code-scanner/**/build/test-results/*
+            vision-qr-code-scanner/**/build/reports/*

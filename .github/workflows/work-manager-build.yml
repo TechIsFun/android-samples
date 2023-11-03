@@ -2,6 +2,8 @@ name: work-manager build
 
 on:
   push:
+    branches:
+      - '*'
     paths:
       - 'work-manager/**'
     paths-ignore:
@@ -33,7 +35,7 @@ jobs:
       - name: set up JDK
         uses: actions/setup-java@v3
         with:
-          java-version: 11
+          java-version: 17
           distribution: 'zulu'
 
       - name: Build
@@ -51,5 +53,5 @@ jobs:
         with:
           name: test-results
           path: |
-            **/build/test-results/*
-            **/build/reports/*
+            work-manager/**/build/test-results/*
+            work-manager/**/build/reports/*
