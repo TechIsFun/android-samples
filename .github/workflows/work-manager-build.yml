@@ -1,14 +1,15 @@
-# Reference: https://github.com/google/accompanist/blob/main/.github/workflows/build.yml
-name: Build & test
+name: work-manager build
 
 on:
   push:
-    branches:
-      - '*'
+    paths:
+      - 'work-manager/**'
     paths-ignore:
       - '**.md'
       - '**.json'
   pull_request:
+    paths:
+      - 'work-manager/**'  
     paths-ignore:
       - '**.md'
       - '**.json'
@@ -22,15 +23,10 @@ jobs:
     timeout-minutes: 120
     strategy:
       fail-fast: false
-      matrix:
-        project: ["file-sharing-producer", "file-sharing-consumer", "vision-qr-code-scanner"]
-
+      
     steps:
       - uses: actions/checkout@v3
-        #with:
-          # Fetch expanded history, which is needed for affected module detection
-          #fetch-depth: '500'
-
+      
       - name: Copy CI gradle.properties
         run: mkdir -p ~/.gradle ; cp .github/ci-gradle.properties ~/.gradle/gradle.properties
 
@@ -42,14 +38,13 @@ jobs:
 
       - name: Build
         env:
-          PROJECT_DIR: ${{ matrix.project }}
+          PROJECT_DIR: work-manager
         run: |
-          cd $PROJECT_DIR
+          cd work-manager
           ./gradlew --scan --stacktrace \
               assemble \
               lintDebug
         
-
       - name: Upload test results
         if: always()
         uses: actions/upload-artifact@v3
