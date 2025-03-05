@@ -8,6 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.github.techisfun.android.firesharingproducer"
+        namespace "com.github.techisfun.android.firesharingproducer"
         minSdk 26
         targetSdk 33
         versionCode 1

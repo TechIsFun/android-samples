@@ -8,6 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.github.techisfun.lottiesample"
+        namespace "com.github.techisfun.lottiesample"
         minSdk 23
         targetSdk 33
         versionCode 1

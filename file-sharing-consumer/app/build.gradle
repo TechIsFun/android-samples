@@ -8,6 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.github.techisfun.android.filesharingconsumer"
+        namespace "com.github.techisfun.android.filesharingconsumer"
         minSdk 26
         targetSdk 33
         versionCode 1
